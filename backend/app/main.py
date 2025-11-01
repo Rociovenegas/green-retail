@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import products
+from app.routers import stores
 
 
 app = FastAPI(
@@ -24,6 +25,11 @@ app.include_router(
     prefix="/api/products",
     tags=["Products"]
 )
+
+app.include_router(
+    stores.router,
+    prefix="/api/stores",
+    tags=["Stores"]) 
 
 @app.get("/")
 def read_root():

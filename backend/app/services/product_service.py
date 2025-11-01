@@ -8,10 +8,7 @@ class ProductService:
         self.db = db
     
     def get_all_products(self) -> List[Product]:
-
         products = self.db.query(Product).all()
-        
-        # Calcular score para cada producto
         for product in products:
             if product.sustainability_score  is None:
                 product.sustainability_score  = calculate_sustainability_score(
@@ -40,8 +37,8 @@ class ProductService:
     def search_products(self, query: str) -> List[Product]:
 
         products = self.db.query(Product).filter(
-            (Product.nombre.ilike(f"%{query}%")) |
-            (Product.palabras_claves.ilike(f"%{query}%"))
+            (Product.name.ilike(f"%{query}%")) |
+            (Product.keywords.ilike(f"%{query}%"))
         ).all()
         
        
