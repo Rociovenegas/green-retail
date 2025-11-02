@@ -124,8 +124,10 @@ DATABASE_URL=postgresql://user1:123456@db:5432/green-retail
    - Ordena candidatos por similitud
    - Excluye el producto original
 
----
 **pd**: Estos algoritmos fueron implementados en su momento el día viernes, en un proyecto que era un solo main.py, muy posiblemente no puedan ser integrados en el tiempo límite.
+
+---
+
 
 ## Endpoints API
 
