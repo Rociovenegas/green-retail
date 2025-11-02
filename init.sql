@@ -8,9 +8,9 @@ CREATE TABLE IF NOT EXISTS products (
     name VARCHAR(100) NOT NULL,
     stock INTEGER DEFAULT 0,
     keywords TEXT,
-    pollution_score DECIMAL(10, 2),
-    social_score DECIMAL(10, 2),
-    economic_score DECIMAL(10, 2),
+    pollution_score DECIMAL(10, 2) CHECK (pollution_score BETWEEN 0 AND 100),
+    social_score DECIMAL(10, 2) CHECK (social_score BETWEEN 0 AND 100),
+    economic_score DECIMAL(10, 2) CHECK (economic_score BETWEEN 0 AND 100),
     sustainability_score DECIMAL(10, 2)
 );
 
